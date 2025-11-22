@@ -1,0 +1,128 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.car-listings-container {
+  padding: 2rem;
+}
+
+.filters-sidebar {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.back-to-form-btn {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.vehicle-type-checkbox {
+  margin-bottom: 0.5rem;
+}
+
+.price-filter {
+  margin-top: 1.5rem;
+}
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-and-sort {
+  display: flex;
+  align-items: center;
+}
+
+.date-filter {
+  margin-left: 1rem;
+}
+
+/* New Car Card Styles */
+.car-card-new {
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.car-card-img-new {
+    border-radius: 1rem;
+    object-fit: cover;
+    height: 100%;
+}
+
+.car-card-header-new {
+    display: flex;
+    justify-content: space-between;
+}
+
+.car-card-title-new {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.car-card-subtitle-new {
+    font-size: 0.9rem;
+}
+
+.car-price-new h5 {
+    font-weight: bold;
+    color: #ffc107;
+}
+
+.car-price-new p {
+    text-align: right;
+}
+
+.car-details-new {
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    padding: 1rem 0;
+}
+
+.details-hr {
+    border-top: 1px solid #eee;
+    margin: 0.5rem 0;
+}
+
+.car-footer-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.car-rating-new .star {
+    color: #e0e0e0;
+}
+
+.car-rating-new .star.filled {
+    color: #ffc107;
+}
+
+.seller-info {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.car-actions-new .action-icon {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.p-icon {
+    border: 1px solid black;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+}
+
+hr {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+}
