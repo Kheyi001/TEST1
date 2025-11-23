@@ -38,6 +38,7 @@
 
 .results-header > p {
   margin-bottom: 0.5rem; /* Add some space below the text */
+  margin-left: 1rem;
 }
 
 .search-and-sort {
@@ -45,6 +46,9 @@
   justify-content: space-between; /* Space out the button and date filter */
   align-items: center;
   width: 100%; /* Make it full width */
+  background-color: #f8f9fa; /* Gray background */
+  padding: 1rem; /* Add padding */
+  border-radius: 0.25rem; /* Rounded corners */
 }
 
 .date-filter {
