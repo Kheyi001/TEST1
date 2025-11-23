@@ -5,7 +5,10 @@ export const cars = [
     date: '24/10/2020',
     price: '180 000 DH',
     location: 'CASA',
-    image: 'https://dacia.m-automotiv.ma/storage/modeles/February2025/LikSts4h9HE8dJOOl0p6.webp', // Duster - **(رابط محدث)**
+    cityName: 'Casablanca',
+    postalCode: '20000',
+    seller: 'Particulier',
+    image: 'https://content.presspage.com/uploads/1896/1920_18c0130-03.jpg?10000',
     type: 'SUV/4X4',
     details: [
       { label: '08/2019', value: '' },
@@ -22,6 +25,7 @@ export const cars = [
       { label: 'Jantes', value: '12' },
     ],
     rating: 5,
+    actions: ['eye', 'p', 'exchange'],
   },
   {
     id: 2,
@@ -29,7 +33,10 @@ export const cars = [
     date: '25/10/2020',
     price: '130 000 DH',
     location: 'RABAT',
-    image: 'https://www.largus.fr/images/styles/max_1300x1300/public/images/renault-clio-alpine-line-blue-parts-1280x853-wm.jpg?itok=gSw7U9DJ', // Clio - **(رابط محدث)**
+    cityName: 'Rabat',
+    postalCode: '10000',
+    seller: 'Particulier',
+    image: 'https://www.largus.fr/images/styles/max_1300x1300/public/images/renault-clio-alpine-line-blue-parts-1280x853-wm.jpg?itok=gSw7U9DJ',
     type: 'CITADINE',
     details: [
       { label: '08/2019', value: '' },
@@ -46,6 +53,7 @@ export const cars = [
       { label: 'Jantes', value: '12' },
     ],
     rating: 5,
+    actions: ['eye', 'p', 'exchange'],
   },
   {
     id: 3,
@@ -53,7 +61,10 @@ export const cars = [
     date: '26/10/2020',
     price: '500 000 DH',
     location: 'CASA',
-    image: 'https://image.elite-auto.fr/visuel/AUDI/audi_24a1sportbackadvhb2fbfr_angularfront.png', // Audi A1 - **(رابط محدث)**
+    cityName: 'Casablanca',
+    postalCode: '20000',
+    seller: 'Particulier',
+    image: 'https://image.elite-auto.fr/visuel/AUDI/audi_24a1sportbackadvhb2fbfr_angularfront.png',
     type: 'BERLINE',
     details: [
       { label: '08/2012', value: '' },
@@ -70,14 +81,18 @@ export const cars = [
       { label: 'Jantes', value: '12' },
     ],
     rating: 4,
+    actions: ['eye', 'p', 'exchange'],
   },
-  {
+    {
     id: 4,
     name: 'PEUGEOT 3008',
     date: '27/10/2020',
     price: '210 000 DH',
     location: 'TANGER',
-    image: 'https://res.cloudinary.com/dkugkfusy/image/upload/w_2000/v1742308132/cars/models/urio2ud2xvplsheztahw.png', // Peugeot 3008 - **(رابط محدث)**
+    cityName: 'Tangier',
+    postalCode: '90000',
+    seller: 'Particulier',
+    image: 'https://res.cloudinary.com/dkugkfusy/image/upload/w_2000/v1742308132/cars/models/urio2ud2xvplsheztahw.png',
     type: 'SUV/4X4',
     details: [
       { label: '05/2021', value: '' },
@@ -94,6 +109,7 @@ export const cars = [
       { label: 'Jantes', value: '17' },
     ],
     rating: 5,
+    actions: ['eye', 'p', 'exchange'],
   },
   {
     id: 5,
@@ -101,7 +117,10 @@ export const cars = [
     date: '28/10/2020',
     price: '195 000 DH',
     location: 'MARRAKECH',
-    image: 'https://cdn.autobip.com/400/photos/car_editions/3148.webp', // Golf 7 - **(رابط محدث)**
+    cityName: 'Marrakech',
+    postalCode: '40000',
+    seller: 'Particulier',
+    image: 'https://cdn.autobip.com/400/photos/car_editions/3148.webp',
     type: 'COMPACTE',
     details: [
       { label: '11/2018', value: '' },
@@ -118,6 +137,7 @@ export const cars = [
       { label: 'Jantes', value: '16' },
     ],
     rating: 4,
+    actions: ['eye', 'p', 'exchange'],
   },
   {
     id: 6,
@@ -125,7 +145,10 @@ export const cars = [
     date: '29/10/2020',
     price: '85 000 DH',
     location: 'FES',
-    image: 'https://www.hyundai.com/content/dam/hyundai/ma/fr/images/test/TEST2/1120X600-5.png', // i10 - **(رابط محدث)**
+    cityName: 'Fes',
+    postalCode: '30000',
+    seller: 'Particulier',
+    image: 'https://www.hyundai.com/content/dam/hyundai/ma/fr/images/test/TEST2/1120X600-5.png',
     type: 'CITADINE',
     details: [
       { label: '01/2022', value: '' },
@@ -142,6 +165,7 @@ export const cars = [
       { label: 'Jantes', value: '14' },
     ],
     rating: 3,
+    actions: ['eye', 'p', 'exchange'],
   },
   {
     id: 7,
@@ -149,7 +173,10 @@ export const cars = [
     date: '30/10/2020',
     price: '450 000 DH',
     location: 'CASA',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9tuDcvd7-QJz_W3XnP9fFYsdDGIHhG5cLVg&s', // BMW 3 - **(رابط محدث)**
+    cityName: 'Casablanca',
+    postalCode: '20000',
+    seller: 'Particuliel',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9tuDcvd7-QJz_W3XnP9fFYsdDGIHhG5cLVg&s',
     type: 'BERLINE',
     details: [
       { label: '09/2017', value: '' },
@@ -166,6 +193,7 @@ export const cars = [
       { label: 'Jantes', value: '18' },
     ],
     rating: 5,
+    actions: ['eye', 'p', 'exchange'],
   },
   {
     id: 8,
@@ -173,7 +201,10 @@ export const cars = [
     date: '31/10/2020',
     price: '230 000 DH',
     location: 'RABAT',
-    image: 'https://bucket.dealervenom.com/copeland-toyota/C430752_8X8_Front.webp?auto=compress%2Cformat&ixlib=php-3.3.1', // Corolla - **(رابط محدث)**
+    cityName: 'Rabat',
+    postalCode: '10000',
+    seller: 'Particulier',
+    image: 'https://bucket.dealervenom.com/copeland-toyota/C430752_8X8_Front.webp?auto=compress%2Cformat&ixlib=php-3.3.1',
     type: 'BERLINE',
     details: [
       { label: '04/2020', value: '' },
@@ -190,6 +221,7 @@ export const cars = [
       { label: 'Jantes', value: '16' },
     ],
     rating: 4,
+    actions: ['eye', 'p', 'exchange'],
   },
   {
     id: 9,
@@ -197,7 +229,10 @@ export const cars = [
     date: '01/11/2020',
     price: '115 000 DH',
     location: 'AGADIR',
-    image: 'https://bucket.dealervenom.com/copeland-toyota/C430752_8X8_Front.webp?auto=compress%2Cformat&ixlib=php-3.3.1', // Fiesta - **(رابط محدث)**
+    cityName: 'Agadir',
+    postalCode: '80000',
+    seller: 'Particulier',
+    image: 'https://bucket.dealervenom.com/copeland-toyota/C430752_8X8_Front.webp?auto=compress%2Cformat&ixlib=php-3.3.1', 
     type: 'CITADINE',
     details: [
       { label: '07/2019', value: '' },
@@ -214,6 +249,7 @@ export const cars = [
       { label: 'Jantes', value: '15' },
     ],
     rating: 4,
+    actions: ['eye', 'p', 'exchange'],
   },
   {
     id: 10,
@@ -221,7 +257,10 @@ export const cars = [
     date: '02/11/2020',
     price: '550 000 DH',
     location: 'CASA',
-    image: 'https://mkt-vehicleimages-prd.autotradercdn.ca/photos/chrome/Expanded/White/2025MBC890001/2025MBC89000101.jpg', // Mercedes C - **(رابط محدث)**
+    cityName: 'Casablanca',
+    postalCode: '20000',
+    seller: 'Particulier',
+    image: 'https://mkt-vehicleimages-prd.autotradercdn.ca/photos/chrome/Expanded/White/2025MBC890001/2025MBC89000101.jpg',
     type: 'BERLINE',
     details: [
       { label: '12/2016', value: '' },
@@ -238,5 +277,6 @@ export const cars = [
       { label: 'Jantes', value: '19' },
     ],
     rating: 5,
+    actions: ['eye', 'p', 'exchange'],
   },
 ];

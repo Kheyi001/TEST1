@@ -1,5 +1,5 @@
-import React, { useState, useRef, useMemo } from 'react';
-import { cars } from './cars';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
+import { cars as initialCars } from './cars';
 import './CarListings.css';
 import { Container, Row, Col, Form, Button, InputGroup } from 'react-bootstrap';
 import { Calendar } from 'react-bootstrap-icons';
@@ -7,26 +7,48 @@ import Filters from './components/Filters';
 import CarList from './components/CarList';
 
 const CarListings = () => {
-  const prices = useMemo(() => cars.map(car => parseInt(car.price.replace(/\s/g, ''))), []);
+  const [allCars, setAllCars] = useState(initialCars);
+  const prices = useMemo(() => allCars.map(car => parseInt(car.price.replace(/\s/g, ''))), [allCars]);
   const maxPrice = useMemo(() => Math.max(...prices), [prices]);
   const minPrice = useMemo(() => Math.min(...prices), [prices]);
 
-  const [filteredCars, setFilteredCars] = useState(cars);
+  const [filteredCars, setFilteredCars] = useState(allCars);
   const [selectedDate, setSelectedDate] = useState('');
-  const [price, setPrice] = useState(maxPrice);
+  const [priceRange, setPriceRange] = useState([minPrice, maxPrice]);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const dateInputRef = useRef(null);
 
+  useEffect(() => {
+    let tempCars = allCars;
+
+    if (selectedDate) {
+      tempCars = tempCars.filter(car => car.date === selectedDate);
+    }
+
+    if (priceRange) {
+      tempCars = tempCars.filter(car => {
+        const carPrice = parseInt(car.price.replace(/\s/g, ''));
+        return carPrice >= priceRange[0] && carPrice <= priceRange[1];
+      });
+    }
+
+    if (selectedTypes.length > 0) {
+      tempCars = tempCars.filter(car => selectedTypes.includes(car.type));
+    }
+
+    setFilteredCars(tempCars);
+  }, [allCars, selectedDate, priceRange, selectedTypes]);
+
+  useEffect(() => {
+    setPriceRange([minPrice, maxPrice]);
+  }, [minPrice, maxPrice]);
+
   const handleDateChange = (event) => {
-    const date = event.target.value;
-    setSelectedDate(date);
-    filterCars(date, price, selectedTypes);
+    setSelectedDate(event.target.value);
   };
 
-  const handlePriceChange = (event) => {
-    const newPrice = event.target.value;
-    setPrice(newPrice);
-    filterCars(selectedDate, newPrice, selectedTypes);
+  const handlePriceRangeChange = (value) => {
+    setPriceRange(value);
   };
 
   const handleTypeChange = (event) => {
@@ -41,25 +63,6 @@ const CarListings = () => {
       }
     }
     setSelectedTypes(newSelectedTypes);
-    filterCars(selectedDate, price, newSelectedTypes);
-  }
-
-  const filterCars = (date, price, types) => {
-    let tempCars = cars;
-
-    if (date) {
-      tempCars = tempCars.filter(car => car.date === date);
-    }
-
-    if (price) {
-      tempCars = tempCars.filter(car => parseInt(car.price.replace(/\s/g, '')) <= price);
-    }
-
-    if (types.length > 0) {
-      tempCars = tempCars.filter(car => types.includes(car.type));
-    }
-
-    setFilteredCars(tempCars);
   }
 
   const handleIconClick = () => {
@@ -68,21 +71,29 @@ const CarListings = () => {
     }
   };
 
+  const handleRatingChange = (carId, newRating) => {
+    setAllCars(prevCars =>
+      prevCars.map(car =>
+        car.id === carId ? { ...car, rating: newRating } : car
+      )
+    );
+  };
+
   return (
     <Container fluid className="car-listings-container">
       <Row>
         <Col md={3} className="filters-sidebar">
           <Filters 
-            handlePriceChange={handlePriceChange} 
+            handlePriceChange={handlePriceRangeChange} 
             handleTypeChange={handleTypeChange}
-            price={price} 
+            priceRange={priceRange} 
             minPrice={minPrice} 
             maxPrice={maxPrice} 
           />
         </Col>
         <Col md={9} className="car-listings">
           <div className="results-header">
-            <p>{`${filteredCars.length} résultats de recherche sur tomobile.ma`}</p>
+            <p>{`${filteredCars.length} résultats de recherche sur QadiriLocation.ma`}</p>
             <div className="search-and-sort">
               <Button variant="warning">SAUVEGARDER LA RECHERCHE</Button>
               <InputGroup className="date-filter">
@@ -95,13 +106,13 @@ const CarListings = () => {
                   onChange={handleDateChange}
                   value={selectedDate}
                 />
-                <InputGroup.Text onClick={handleIconClick} style={{ cursor: 'pointer' }}>
+                <InputGroup.Text onClick={handleIconClick} className="calendar-icon-wrapper" style={{ cursor: 'pointer' }}>
                   <Calendar />
                 </InputGroup.Text>
               </InputGroup>
             </div>
           </div>
-          <CarList cars={filteredCars} />
+          <CarList cars={filteredCars} onRatingChange={handleRatingChange} />
         </Col>
       </Row>
     </Container>

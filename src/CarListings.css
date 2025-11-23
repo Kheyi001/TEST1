@@ -1,7 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 .car-listings-container {
-  padding: 2rem;
+
 }
 
 .filters-sidebar {
@@ -31,14 +31,20 @@
 
 .results-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start */
   margin-bottom: 1rem;
+}
+
+.results-header > p {
+  margin-bottom: 0.5rem; /* Add some space below the text */
 }
 
 .search-and-sort {
   display: flex;
+  justify-content: space-between; /* Space out the button and date filter */
   align-items: center;
+  width: 100%; /* Make it full width */
 }
 
 .date-filter {
@@ -48,13 +54,15 @@
 /* New Car Card Styles */
 .car-card-new {
     border: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .car-card-img-new {
-    border-radius: 1rem;
+    border-radius: 1.5rem !important; /* Force rounded corners */
     object-fit: cover;
-    height: 100%;
+    height: 250px;
+    width: 250px;
+    margin-top: 2.5rem;
 }
 
 .car-card-header-new {
@@ -68,27 +76,39 @@
 }
 
 .car-card-subtitle-new {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+}
+
+.car-card-subtitle-new .bi-calendar-event {
+  color: #ffc107;
+  margin-right: 5px;
 }
 
 .car-price-new h5 {
     font-weight: bold;
-    color: #ffc107;
 }
 
 .car-price-new p {
     text-align: right;
 }
 
+.location-icon {
+    color: #ffc107;
+}
+
 .car-details-new {
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
-    padding: 1rem 0;
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+}
+
+.car-details-new p {
+    margin-bottom: 0.25rem;
 }
 
 .details-hr {
-    border-top: 1px solid #eee;
-    margin: 0.5rem 0;
+    border-top: 1px solid #ccc;
+    margin: 0.25rem 0;
 }
 
 .car-footer-new {
@@ -99,6 +119,7 @@
 
 .car-rating-new .star {
     color: #e0e0e0;
+    font-size: 1.5rem;
 }
 
 .car-rating-new .star.filled {
@@ -110,6 +131,11 @@
     font-size: 0.9rem;
 }
 
+.car-actions-new {
+    display: flex;
+    align-items: center;
+}
+
 .car-actions-new .action-icon {
     margin-left: 1rem;
     font-size: 1.2rem;
@@ -117,12 +143,49 @@
 }
 
 .p-icon {
-    border: 1px solid black;
-    padding: 0.2rem 0.5rem;
+    width: 28px;
+    height: 28px;
     border-radius: 3px;
+    background-color: #343a40;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.seller-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.seller-details span {
+    font-size: 0.8rem;
+    margin-right: 0.5rem; 
+}
+
+.seller-details span:last-child {
+    margin-right: 0;
 }
 
 hr {
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-top: 1px solid #eee;
+}
+
+/* Make text on warning buttons white and single-line */
+.btn-warning,
+.btn-warning:hover {
+  color: #fff !important;
+  white-space: nowrap;
+}
+
+/* Style the calendar icon wrapper */
+.calendar-icon-wrapper {
+  background-color: #ffc107;
+  color: #fff;
 }

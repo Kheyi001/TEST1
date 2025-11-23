@@ -1,7 +1,10 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import './Slider.css';
 
-const Filters = ({ handlePriceChange, handleTypeChange, price, minPrice, maxPrice }) => {
+const Filters = ({ handlePriceChange, handleTypeChange, priceRange, minPrice, maxPrice }) => {
   return (
     <>
       <Button variant="warning" className="back-to-form-btn">RETOURNER AU FORMULAIRE</Button>
@@ -21,14 +24,15 @@ const Filters = ({ handlePriceChange, handleTypeChange, price, minPrice, maxPric
       <div className="price-filter">
         <h5>Prix</h5>
         <div className="price-range">
-          <span>{minPrice} DH</span>
-          <span>{price} DH</span>
+          <span>{priceRange[0]} DH</span>
+          <span>{priceRange[1]} DH</span>
         </div>
-        <Form.Range 
-          onChange={handlePriceChange} 
-          min={minPrice} 
-          max={maxPrice} 
-          value={price} 
+        <Slider
+          range
+          min={minPrice}
+          max={maxPrice}
+          value={priceRange}
+          onChange={handlePriceChange}
         />
       </div>
       {/* Add other filters here */}
